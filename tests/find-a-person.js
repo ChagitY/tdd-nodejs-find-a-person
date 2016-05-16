@@ -9,3 +9,19 @@ describe('Find a person', function() {
     expect(posts).to.be.eql(["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley"]);
   });
 });
+
+describe('Find a person in location return true', function() {
+  it('Given a person name, check if the map includes a location information for it (a place or geo. location)', function() {
+    var map = new Map(["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley", "Random post"]);
+    var posts = map.check_if_person_in_location("Or A.")
+    expect(posts).to.be.true;
+  });
+});
+
+describe('Find a person in location return false', function() {
+  it('Given a person name, check if the map includes a location information for it (a place or geo. location)', function() {
+    var map = new Map(["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley", "Random post"]);
+    var posts = map.check_if_person_in_location("Random")
+    expect(posts).to.be.false;
+  });
+});
