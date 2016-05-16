@@ -25,3 +25,20 @@ describe('Find a person in location return false', function() {
     expect(posts).to.be.false;
   });
 });
+
+
+describe('Check persons with the same name with different locations return true', function() {
+  it('Check if there are map inconsistencies, e.g., the same name with different locations', function() {
+    var map = new Map(["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley", "Random post"]);
+    var posts = map.check_persons_with_the_same_name_with_different_locations()
+    expect(posts).to.be.true;
+  });
+});
+
+describe('Check persons with the same name with different locations return false', function() {
+  it('Check if there are map inconsistencies, e.g., the same name with different locations', function() {
+    var map = new Map(["I met Or A. at Chabad house Bangkok", "We found Or B. R.I.P at Langtang valley", "Random post"]);
+    var posts = map.check_persons_with_the_same_name_with_different_locations()
+    expect(posts).to.be.false;
+  });
+});

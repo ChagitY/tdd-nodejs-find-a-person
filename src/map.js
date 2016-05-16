@@ -1,4 +1,5 @@
-		var locations = ["Israel","Langtang","Langtang valley"];
+var locations = ["Israel","Langtang","Langtang valley"];
+var names = ["Israel","Langtang","Langtang valley"];
 
 function Map(posts) {
   this._posts = posts;
@@ -32,5 +33,11 @@ Map.prototype.check_if_person_in_location = function(name) {
 		});
 return flag;	
 }
+
+
+Map.prototype.check_persons_with_the_same_name_with_different_locations = function(name) {
+	return null;
+}
+
 
 module.exports = Map;
